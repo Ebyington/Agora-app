@@ -5,7 +5,11 @@ const bcrypt = require('bcrypt');
 const History = require('./History');
 
 const userSchema = new Schema({
-
+        username:{
+            type: String,
+            required: true,
+            unique: true
+        },
         email: {
             type: String,
             required: true,
