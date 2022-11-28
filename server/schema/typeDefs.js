@@ -14,10 +14,11 @@ Type User {
 type Product {
     _id: ID
     name: String
+    category: String
     description: String
     image: String
     price: Int
-    quantity: Int
+    stock: Int
   }
 
   Type History {

@@ -15,6 +15,9 @@ const productSchema = new Schema({
         required: true,
         min: 100.00
     },
+    description: {
+        type: String,
+    }, 
     stock: {
         type: Number,
         min: 0,
