@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, History } = require('../models');
+const { User, Product, History, Category } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -82,7 +82,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addhistory: async (parent, { products }, context) => {
+    addHistory: async (parent, { products }, context) => {
       console.log(context);
       if (context.user) {
         const history = new History({ products });
