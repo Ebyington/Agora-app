@@ -47,7 +47,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(fName: String!, lName: String!, email: String!, 
+    addUser(username: String!, fName: String!, lName: String!, email: String!, 
     password: String!): Auth
     addHistory(products: [ID]!): History
     updateUser(fName: String, lName: String, email: String, password: String): User
