@@ -64,7 +64,7 @@ function Navbar (props) {
 
 
 
-                        <button class="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0" onClick={toggleTheme}>Toggle Theme</button>
+                        {/* <button class="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0" onClick={toggleTheme}>Toggle Theme</button> */}
                     </div>
                 </div>
             </ul>
