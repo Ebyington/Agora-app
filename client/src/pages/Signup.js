@@ -92,7 +92,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="flex-row flex-end">
-                    <button type="submit">Submit</button>
+                    <button type="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
                 </div>
             </form>
         </div>

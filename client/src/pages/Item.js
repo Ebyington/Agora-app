@@ -46,7 +46,7 @@ function Item(item) {
         </div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={addToCart}>Add to cart</button>
     </div>
   );
 }
