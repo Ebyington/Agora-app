@@ -5,10 +5,6 @@
     font-family: sans-serif;
 }
 
-body {
-    overflow: hidden;
-}
-
 section{
     height: 100vh;
     display: flex;
@@ -22,6 +18,10 @@ section{
 section img {
     padding: 10px;
     border: 5px solid white;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .homeContainer {
