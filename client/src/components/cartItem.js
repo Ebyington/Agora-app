@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 
-const CartItem = ({ item }) => {
+const cartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const removeFromCart = item => {
@@ -66,4 +66,4 @@ const CartItem = ({ item }) => {
   );
 }
 
-export default CartItem;
+export default cartItem;
