@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
-import Auth from '../../utils/auth';
+import { QUERY_CHECKOUT } from '../utils/queries';
+import { idbPromise } from '../utils/helpers';
+import CartItem from '../components/CartItem';
+// import Auth from '../utils/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import './style.css';
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
+// import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -85,12 +85,12 @@ const Cart = () => {
 
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
-
-            {Auth.loggedIn() ? (
+            <button onClick={submitCheckout}>Checkout</button>
+            {/* {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
               <span>(log in to check out)</span>
-            )}
+            )} */}
           </div>
         </div>
       ) : (
