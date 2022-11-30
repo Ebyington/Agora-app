@@ -5,7 +5,8 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Shirt' },
+    { name: 'Shirts' },
+    { name: 'Hats' },
     { name: 'Pants' }
   ]);
 
@@ -15,7 +16,7 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Object Oriented',
+      name: '{ Shirt }',
       image: 'shirt.png',
       description:
         '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
@@ -24,12 +25,20 @@ db.once('open', async () => {
       stock: 40
     },
     {
-      name: 'Object Oriented 2',
-      image: 'shirt_close.png',
+      name: '{ Hat }',
+      image: 'hatF.jpg',
       description:
-        '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
+        '100% Cotton. Embroidered Dad Cap',
       category: categories[1]._id,
-      price: 125,
+      price: 50,
+      stock: 40
+    },
+    {
+      name: '{ Pants }',
+      image: 'sweats.jpg',
+      description: '100% Polyester. Lightweight water-resistant fabric. Fully lined mesh lining. Relaxed fit. Elastic waistband and ankle cuffs. Zip pockets. Sits at hip. Tear-away care label Blank product sourced from China.',
+      category: categories[1]._id,
+      price: 50,
       stock: 40
     },
   ]);
