@@ -52,7 +52,7 @@ function Products() {
       <h2>Our Products:</h2>
      
           {state.products ? (
-            <div className="container">
+            <div className="container reveal">
               {filterProducts().map((product) => (
                 <Item 
                   key={product._id}
