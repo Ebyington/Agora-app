@@ -29,13 +29,14 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
+    username: 'ck',
     fName: 'Chris',
     lName: 'Khiev',
     email: 'chrisk@testmail.com',
     password: 'password12345',
     histories: [
       {
-        products: [products[0]._id, products[0]._id, products[1]._id]
+        products: [products[0]._id, products[0]._id]
       }
     ]
   });

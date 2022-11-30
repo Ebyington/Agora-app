@@ -1,4 +1,4 @@
-import { configureStore } from 'redux';
+import { createStore } from 'redux';
 import reducers from './reducers';
 
-export default configureStore(reducers);
+export default createStore(reducers);
