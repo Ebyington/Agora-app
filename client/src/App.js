@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import store from './utils/store';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Products from './pages/Products';
