@@ -16,6 +16,7 @@ db.once('open', async () => {
   const products = await Product.insertMany([
     {
       name: 'Object Oriented',
+      image: 'shirt.png',
       description:
         '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
       category: categories[0]._id,
@@ -24,6 +25,7 @@ db.once('open', async () => {
     },
     {
       name: 'Object Oriented 2',
+      image: 'shirt_close.png',
       description:
         '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
       category: categories[1]._id,
