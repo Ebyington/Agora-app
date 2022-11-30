@@ -22,21 +22,22 @@ function Signup(props) {
                 
             },
         });
-        const auth = userMutation.data.addUser.token;
-        Auth.login(auth);
+        const token = userMutation.data.addUser.token;
+        Auth.login(token);
     };
     
     const newData = (e) => {
-        const { name, d } = e.target;
+        const { name, value } = e.target;
         setFormState({
             ...formState,
-            [name]: d,
+            [name]: value,
         })
         console.log(name);
+        console.log(value);
     };
     return (
         <div className="container my-1">
-            <Link className="flex-row space-between" to="/login">Login</Link>
+            <Link className="flex-row space-between" to="/Login">Login</Link>
             <Link className="flex-row space-between" to="/">Home</Link>
             <h2>BECOME A OMNV MEMBER</h2>
             <form onSubmit={formData}>
