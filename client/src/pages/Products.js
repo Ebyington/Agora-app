@@ -52,13 +52,13 @@ function Products() {
       <h2>Our Products:</h2>
      
           {state.products ? (
-            <div className="container reveal">
+            <div className="container reveal flex -mx-2 mb-8">
               {filterProducts().map((product) => (
                 <Item 
                   key={product._id}
                   _id={product._id}
                   name={product.name}
-                  // image={product.image}
+                  image={product.image}
                   description={product.description}
                   price={product.price}
                   stock={product.stock}
