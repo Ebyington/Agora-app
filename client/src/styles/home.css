@@ -5,8 +5,12 @@
     font-family: sans-serif;
 }
 
+body {
+    overflow: hidden;
+}
+
 section{
-    height: 98vh;
+    height: 100vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -23,6 +27,7 @@ section img {
 .homeContainer {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 100vh;
 }
 
