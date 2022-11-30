@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../utils/queries';
+import { GO_CHECKOUT } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import CartItem from '../components/CartItem';
 import Auth from '../utils/auth';
@@ -14,7 +14,7 @@ const stripePromise = loadStripe('pk_test_51M9HYMKvhJVBquanDqSOtkEIJPPBswKxoRWtj
 const Cart = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const [getCheckout, { data }] = useLazyQuery(GO_CHECKOUT);
 
   useEffect(() => {
     if (data) {
@@ -85,7 +85,6 @@ const Cart = () => {
 
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
-            <button onClick={submitCheckout}>Checkout</button>
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
