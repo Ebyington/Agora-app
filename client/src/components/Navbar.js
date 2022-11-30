@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 
 function Navbar (props) {
   
-    const toggleTheme = () => { 
-    document.body.className !== "dark"
-    ? document.body.className = "dark" 
-    : document.body.className = ""
-  }
   return (
     <>
       <h1 className="bg-black text-6xl font-normal leading-normal mt-0 mb-2 text-red-900">
@@ -30,17 +25,11 @@ function Navbar (props) {
                             <Link to ="/Products">Products</Link>
                         </li>
                         <li className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 cursor-pointer">
-                            <Link to ="/Item">Item</Link>
-                        </li>
-                        <li className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 cursor-pointer">
                             <Link to ="/Cart">Cart</Link>
                         </li>
                         <li className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 cursor-pointer">
                             <Link to ="/OrderHistory">Order History</Link>
                         </li>
-                        <div>
-                        <button className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0" onClick={toggleTheme}>Dark Mode</button>
-                        </div>
                     </div>
                 </div>
             </ul>
