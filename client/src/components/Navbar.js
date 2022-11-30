@@ -47,7 +47,7 @@ function Navbar (props) {
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                     <div className="title-font font-medium text-white mb-4 md:mb-0">
                         <li className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 cursor-pointer">
-                            <Link to ="/Home">Home</Link>
+                            <Link to ="/">Home</Link>
                         </li>
                         <li className="inline-flex items-center dark:bg-gray-800 dark:text-white text-black border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 cursor-pointer">
                             <Link to ="/Login">Login</Link>
