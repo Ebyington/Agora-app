@@ -38,6 +38,7 @@ query getProducts($category: ID) {
     description
     price
     stock
+    image
   }
 }
 `;

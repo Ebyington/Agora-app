@@ -5,6 +5,7 @@ import { UPDATE_PRODUCTS } from '../utils/actions';
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
+import '../styles/product.css';
 
 
 
@@ -57,6 +58,7 @@ function Products() {
               key={product._id}
               _id={product._id}
               name={product.name}
+              image={product.image}
               description={product.description}
               price={product.price}
               stock={product.stock}
