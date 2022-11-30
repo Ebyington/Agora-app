@@ -12,7 +12,7 @@ import OrderHistory from './pages/OrderHistory';
 import Cart from './pages/Cart';
 import Item from './pages/Item';
 import Login from './pages/Login';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
