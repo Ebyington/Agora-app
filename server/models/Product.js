@@ -8,12 +8,11 @@ const productSchema = new Schema({
     name: {
         type: String,
         required: true,
-        trim: true
     },
     price: {
         type: Number,
         required: true,
-        min: 100.00
+        min: 1.00
     },
     description: {
         type: String,

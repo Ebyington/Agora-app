@@ -15,12 +15,20 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Shrek',
+      name: 'Object Oriented',
       description:
-        'HELP ME SOMEONE',
+        '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
       category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+      price: 125,
+      stock: 40
+    },
+    {
+      name: 'Object Oriented 2',
+      description:
+        '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
+      category: categories[1]._id,
+      price: 125,
+      stock: 40
     },
   ]);
 
@@ -29,10 +37,11 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
+    username: 'ckhiev',
     fName: 'Chris',
     lName: 'Khiev',
     email: 'chrisk@testmail.com',
-    password: 'password12345',
+    password: 'password123',
     histories: [
       {
         products: [products[0]._id, products[0]._id, products[1]._id]
