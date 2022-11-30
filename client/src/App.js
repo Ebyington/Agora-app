@@ -6,7 +6,13 @@ import './App.css';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import Home from './pages/Home';
-import Navbar from './components/navbar';
+import Signup from './pages/Signup';
+import Products from './pages/Products';
+import OrderHistory from './pages/OrderHistory';
+import Cart from './pages/Cart';
+import Item from './pages/Item';
+import Login from './pages/Login';
+import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,6 +42,12 @@ function App() {
             <Provider store={store}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Signup" element={<Signup />} />
+              <Route path="/Cart" element={<Cart />} />
+              <Route path="/OrderHistory" element={<OrderHistory />} />
+              <Route path="/Products" element={<Products />} />
+              <Route path="/Item" element={<Item />} />
             </Routes>
           
           </Provider>
