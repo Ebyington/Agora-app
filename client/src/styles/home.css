@@ -1,3 +1,6 @@
+html{
+    background-color: gray;
+}
 * {
     margin: 0;
     padding: 0;
@@ -25,8 +28,8 @@ section img {
 }
 
 .homeContainer {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    /* scroll-snap-type: y mandatory; */
+    /* overflow-y: scroll; */
     overflow-x: hidden;
     height: 100vh;
 }

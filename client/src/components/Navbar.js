@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-
 function Navbar (props) {
   
     const toggleTheme = () => { 
@@ -10,11 +8,11 @@ function Navbar (props) {
     ? document.body.className = "dark" 
     : document.body.className = ""
   }
-
-
-
-    return (
-
+  return (
+    <>
+      <h1 className="bg-black text-6xl font-normal leading-normal mt-0 mb-2 text-red-900">
+        OMNV- join the movement
+      </h1>
         <header className="dark:bg-gray-800 dark:text-white text-black md:sticky top-0 z-10">
              <ul>
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -47,8 +45,8 @@ function Navbar (props) {
                 </div>
             </ul>
         </header>
-     
+     </>
     )}
 
 
-export default Navbar
+export default Navbar;
