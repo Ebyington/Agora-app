@@ -6,39 +6,38 @@ import shirtClose from '../assets/shirt_close.png';
 import shirt from '../assets/shirt.png'
 
 
-window.addEventListener('scroll', reveal)
+// window.addEventListener('scroll', reveal)
 
-function reveal(){
-  var reveals = document.querySelectorAll('.reveal');
+// function reveal(){
+//   var reveals = document.querySelectorAll('.reveal');
 
-  for(var i=0; i<reveals.length; i++) {
-    var winH = window.innerHeight;
-    var revealTop = reveals[i].getBoundingClientRect().top;
-    var revealPoint = 200;
+//   for(var i=0; i<reveals.length; i++) {
+//     var winH = window.innerHeight;
+//     var revealTop = reveals[i].getBoundingClientRect().top;
+//     var revealPoint = 200;
 
-    if(revealTop < winH - revealPoint){
-      reveals[i].classList.add('active');
-    }
-    else{
-      reveals[i].classList.remove('active');
-    }
-  }
-}
+//     if(revealTop < winH - revealPoint){
+//       reveals[i].classList.add('active');
+//     }
+//     else{
+//       reveals[i].classList.remove('active');
+//     }
+//   }
+// }
 
 
 const Home = () => {
   return (
     <div className="homeContainer">
       <section className="one reveal fade-in-image">
-        <h1>object oriented</h1>
         <div>
-          <h1>1</h1>
+          <h1 className="titleF">object oriented</h1>
           <img className="image1" src={modelClose} alt="model with shirt" width="500" height="600"/>
         </div>
       </section>
       <section className="two reveal fade-in-image">
         <img className="image2" src={modelPic} alt="model with shirt" width="500" height="600"/>
-        <h1>2</h1>
+        <h1 className="textF">Releases 2030</h1>
       </section>
       <section className="three reveal fade-in-image">
         <h1>3</h1>
