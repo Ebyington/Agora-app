@@ -40,12 +40,12 @@ const Home = () => {
         <h1 className="textF">Releases 2030</h1>
       </section>
       <section className="three reveal fade-in-image">
-        <h1>3</h1>
+        <h1>Cool Jung is seen at Publix on Wednesdays.</h1>
         <img className="image3" src={shirtClose} alt="model with shirt" width="500" height="600"/>
       </section>
       <section className="four reveal fade-in-image">
       <img className="image4" src={shirt} alt="model with shirt" width="500" height="600"/>
-        <h1>4</h1>
+        <h1>100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.</h1>
       </section>
     </div>
   );
