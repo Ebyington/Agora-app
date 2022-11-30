@@ -5,83 +5,97 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+    const [formState, setFormState] = useState({ email: '', password: ''});
+    const [addUser] = useMutation(ADD_USER);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-  };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
-  return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
-
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            onChange={handleChange}
-          />
+    
+    const formData = async (e) => {
+        e.preventDefault();
+        const userMutation = await addUser({
+            variables: {
+                username: formState.username,
+                fName: formState.fName,
+                lName: formState.lName,
+                email: formState.email,
+                password: formState.password,
+                
+            },
+        });
+        const auth = userMutation.data.addUser.token;
+        Auth.login(auth);
+    };
+    
+    const newData = (e) => {
+        const { name, d } = e.target;
+        setFormState({
+            ...formState,
+            [name]: d,
+        })
+        console.log(name);
+    };
+    return (
+        <div className="container my-1">
+            <Link className="flex-row space-between" to="/login">Login</Link>
+            <Link className="flex-row space-between" to="/">Home</Link>
+            <h2>BECOME A OMNV MEMBER</h2>
+            <form onSubmit={formData}>
+            <div className="flex-row space-between my-2">
+                    <label htmlFor="username">Username:</label>
+                    <input
+                        placeholder="enter your username"
+                        name="username"
+                        type="username"
+                        id="username"
+                        onChange={newData}
+                    />
+                </div>
+                    <div className="flex-row space-between my-2">
+                        <label htmlFor="fName">First Name:</label>
+                        <input
+                            placeholder="enter your first name"
+                            name="fName"
+                            type="fName"
+                            id="fName"
+                            onChange={newData}
+                        />
+                    </div>
+                    <div className="flex-row space-between my-2">
+                        <label htmlFor="lName">Last Name:</label>
+                        <input
+                            placeholder="enter your last name"
+                            name="lName"
+                            type="lname"
+                            id="lName"
+                            onChange={newData}
+                        />
+                    </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        placeholder="enter your email"
+                        name="email"
+                        type="email"
+                        id="email"
+                        onChange={newData}
+                    />
+                </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        placeholder="minimum 8 character password"
+                        name="password"
+                        type="password"
+                        id="password"
+                        onChange={newData}
+                    />
+                </div>
+                <div className="flex-row flex-end">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-  );
+    );
 }
 
 export default Signup;
