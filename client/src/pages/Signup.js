@@ -5,33 +5,35 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
-    const [formState, setFormState] = useState({ username: '',email: '', password: '', fName: '', lName:'' });
+    const [formState, setFormState] = useState({ email: '', password: ''});
     const [addUser] = useMutation(ADD_USER);
 
 
-    const newData = (e) => {
-        const { user, d } = e.target;
-        setFormState({
-            ...formState,
-            [user]: d,
-        });
-    };
-
+    
     const formData = async (e) => {
         e.preventDefault();
         const userMutation = await addUser({
             variables: {
                 username: formState.username,
-                email: formState.email,
-                password: formState.password,
                 fName: formState.fName,
                 lName: formState.lName,
+                email: formState.email,
+                password: formState.password,
+                
             },
         });
         const auth = userMutation.data.addUser.token;
         Auth.login(auth);
     };
-
+    
+    const newData = (e) => {
+        const { name, d } = e.target;
+        setFormState({
+            ...formState,
+            [name]: d,
+        })
+        console.log(name);
+    };
     return (
         <div className="container my-1">
             <Link className="flex-row space-between" to="/login">Login</Link>
@@ -48,25 +50,6 @@ function Signup(props) {
                         onChange={newData}
                     />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        placeholder="enter your email"
-                        name="email"
-                        type="email"
-                        id="email"
-                        onChange={newData}
-                    />
-                </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        placeholder="minimum 8 character password"
-                        name="password"
-                        type="password"
-                        id="password"
-                        onChange={newData}
-                    />
                     <div className="flex-row space-between my-2">
                         <label htmlFor="fName">First Name:</label>
                         <input
@@ -87,6 +70,25 @@ function Signup(props) {
                             onChange={newData}
                         />
                     </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        placeholder="enter your email"
+                        name="email"
+                        type="email"
+                        id="email"
+                        onChange={newData}
+                    />
+                </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        placeholder="minimum 8 character password"
+                        name="password"
+                        type="password"
+                        id="password"
+                        onChange={newData}
+                    />
                 </div>
                 <div className="flex-row flex-end">
                     <button type="submit">Submit</button>
