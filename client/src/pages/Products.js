@@ -7,9 +7,10 @@ import { GET_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 
 
-function ProductList() {
+
+function Products() {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => {return state;});
 
   const { currentCategory } = state;
 
@@ -17,6 +18,7 @@ function ProductList() {
 
   useEffect(() => {
     if (data) {
+      console.log(data);
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products,
@@ -45,27 +47,27 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
+
+    <div>
       <h2>Our Products:</h2>
-      {state.products.length ? (
+      {state.products ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
             <Item
               key={product._id}
               _id={product._id}
-              image={product.image}
               name={product.name}
+              description={product.description}
               price={product.price}
-              quantity={product.quantity}
+              stock={product.stock}
             />
           ))}
         </div>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
-    
     </div>
   );
 }
 
-export default ProductList;
+export default Products;

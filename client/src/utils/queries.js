@@ -26,20 +26,20 @@ export const GET_USERS = gql`
         }
     }
 `;
+
 export const GET_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
+query getProducts($category: ID) {
+  products(category: $category) {
+    _id
+    name
+    category {
       _id
-      name
-      description
-      price
-      quantity
-      image
-      category {
-        _id
-      }
     }
+    description
+    price
+    stock
   }
+}
 `;
 
 export const QUERY_CHECKOUT = gql`

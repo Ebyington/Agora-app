@@ -43,36 +43,36 @@ import {
         return {
           ...state,
           cartOpen: true,
-          cart: state.cart.map(product => {
+          cart: state.cart.map((product) => {
             if (response._id === product._id) {
-              product.purchaseQuantity = response.purchaseQuantity
+              product.purchaseQuantity = response.purchaseQuantity;
             }
-            return product
-          })
+            return product;
+          }),
         };
   
       case REMOVE_FROM_CART:
-        let newState = state.cart.filter(product => {
+        let newState = state.cart.filter((product) => {
           return product._id !== response._id;
         });
   
         return {
           ...state,
           cartOpen: newState.length > 0,
-          cart: newState
+          cart: newState,
         };
   
       case CLEAR_CART:
         return {
           ...state,
           cartOpen: false,
-          cart: []
+          cart: [],
         };
   
       case TOGGLE_CART:
         return {
           ...state,
-          cartOpen: !state.cartOpen
+          cartOpen: !state.cartOpen,
         };
   
       case UPDATE_CATEGORIES:
@@ -84,8 +84,8 @@ import {
       case UPDATE_CURRENT_CATEGORY:
         return {
           ...state,
-          currentCategory: response.currentCategory
-        }
+          currentCategory: response.currentCategory,
+        };
   
       default:
         return state;
