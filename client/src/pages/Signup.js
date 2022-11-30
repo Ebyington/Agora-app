@@ -36,7 +36,7 @@ function Signup(props) {
         console.log(value);
     };
     return (
-        <div className="container my-1">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <Link className="flex-row space-between" to="/Login">Login</Link>
             <Link className="flex-row space-between" to="/">Home</Link>
             <h2>BECOME A OMNV MEMBER</h2>
@@ -92,7 +92,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="flex-row flex-end">
-                    <button type="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
+                    <button type="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
                 </div>
             </form>
         </div>

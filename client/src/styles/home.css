@@ -11,7 +11,7 @@ section{
     justify-content: space-evenly;
     align-items: center;
     color: white;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     flex-direction: column;
 }
 
@@ -25,8 +25,8 @@ section img {
 }
 
 .homeContainer {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    /* scroll-snap-type: y mandatory; */
+    /* overflow-y: scroll; */
     overflow-x: hidden;
     height: 100vh;
 }

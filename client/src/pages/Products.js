@@ -5,7 +5,7 @@ import { UPDATE_PRODUCTS } from '../utils/actions';
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
-import '../styles/product.css';
+// import '../styles/product.css';
 
 
 
@@ -51,6 +51,8 @@ function Products() {
 
     <div>
       <h2>Our Products:</h2>
+      <div className="container my-12 mx-auto px-4 md:px-12">
+  <div className="flex flex-wrap -mx-1 lg:-mx-4">
       {state.products ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
@@ -68,6 +70,8 @@ function Products() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
+    </div>
+    </div>
     </div>
   );
 }
