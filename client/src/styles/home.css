@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section{
+    height: 98vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    scroll-snap-align: start;
+    flex-direction: column;
+}
+
+section img {
+    padding: 10px;
+    border: 5px solid white;
+}
+
+.homeContainer {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.titleF {
+    font-size: 2em;
+}
+
+.textF {
+    font-size: 1.5em;
+}
+
+.one{
+    background-color: black;
+}
+
+.two{
+    background-color: rgb(153, 44, 44);
+}
+
+.three{
+    background-color: rgb(141, 112, 112);
+}
+
+.four{
+    background-color: rgb(75, 29, 29);
+}
+
+/* .fade-in-image { animation: fadeIn 5s; }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  } */
