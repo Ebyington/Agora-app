@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { pluralize } from '../utils/helpers';
-import { useDispatch, useSelector } from 'react-redux';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
-import { idbPromise } from '../utils/helpers';
+import React from "react";
+import { Link } from "react-router-dom";
+import { pluralize } from "../utils/helpers";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
+import { idbPromise } from "../utils/helpers";
 
 function Item(item) {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function Item(item) {
         _id: _id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      idbPromise('cart', 'put', {
+      idbPromise("cart", "put", {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
@@ -30,23 +30,38 @@ function Item(item) {
         type: ADD_TO_CART,
         product: { ...item, purchaseQuantity: 1 },
       });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+      idbPromise("cart", "put", { ...item, purchaseQuantity: 1 });
     }
   };
 
   return (
-    <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
-        <img alt={name} src={`/assets/${image}`} />
-        <p>{name}</p>
-      </Link>
-      <div>
-        <div>
-          {quantity} {pluralize('item', quantity)} in stock
+    <div className="container my-12 mx-auto px-4 md:px-12">
+      <div className="flex flex-wrap ">
+        <div className="my-1 bg-red-900 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4">
+          <article className="overflow-hidden ">
+            <Link to={`/products/${_id}`}>
+              <img
+                alt={name}
+                className="box-content h-32 w-32 p-4 border-1"
+                src={`/assets/${image}`}
+              />
+              <p className=" no-underline hover:underline text-grey-darker text-lg">{name}</p>
+            </Link>
+            <div>
+              <div>
+                {quantity} {pluralize("item", quantity)} in stock
+              </div>
+              <span>${price}</span>
+            </div>
+            <button
+              className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button>
+          </article>
         </div>
-        <span>${price}</span>
       </div>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

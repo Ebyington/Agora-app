@@ -50,16 +50,15 @@ function Products() {
   return (
     <div>
       <h2>Our Products:</h2>
-      <div className="container my-12 mx-auto px-4 md:px-12">
-        <div className="flex flex-wrap -mx-1 lg:-mx-4">
+     
           {state.products ? (
-            <div className=" shadow-lg bg-red-800 flex items-center justify-between leading-tight p-2 md:p-4">
+            <div className="container">
               {filterProducts().map((product) => (
-                <Item className="shadow hover:shadow-lg"
+                <Item 
                   key={product._id}
                   _id={product._id}
                   name={product.name}
-                  image={product.image}
+                  // image={product.image}
                   description={product.description}
                   price={product.price}
                   stock={product.stock}
@@ -70,8 +69,7 @@ function Products() {
             <h3>You haven't added any products yet!</h3>
           )}
         </div>
-      </div>
-    </div>
+    
   );
 }
 
