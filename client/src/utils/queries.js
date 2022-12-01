@@ -2,28 +2,29 @@ import { gql } from '@apollo/client';
 
 export const GET_USERS = gql`
     query getUsers {
-        user {
+      user {
         _id
         username
         fName
         lName
         email
-        history {
-            _id
-            products {
+        histories {
+          _id
+          products {
             _id
             name
             category {
-                _id
-                name
+              _id
+              name
             }
             description
             price
             stock
-            }
-            purchaseDate
+            image
+          }
+          purchaseDate
         }
-        }
+      }
     }
 `;
 
@@ -43,8 +44,8 @@ query getProducts($category: ID) {
 }
 `;
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
+export const GO_CHECKOUT = gql`
+  query CHECKOUT($products: [ID]!) {
     checkout(products: $products) {
       session
     }

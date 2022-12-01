@@ -11,7 +11,7 @@ const typeDefs = gql`
       fName: String
       lName: String
       email: String
-      history: [History]
+      histories: [History]
   }
 
   type Product {
