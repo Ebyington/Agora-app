@@ -20,8 +20,7 @@ const typeDefs = gql`
       image: String
       category: Category
       description: String
-      price: Int
-      stock: Int
+      price: Int    
     }
 
   type History {
@@ -54,6 +53,7 @@ const typeDefs = gql`
     updateUser(fName: String, lName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+
   }
 `;
 
