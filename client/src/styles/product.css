@@ -42,3 +42,30 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.singleBig{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.singleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #D92938;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.singleContainer img {
+  border-radius: 15px;
+}
+
+.topRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
