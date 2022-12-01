@@ -8,7 +8,7 @@ function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
-  const handleFormSubmit = async (event) => {
+  const formData = async (event) => {
     event.preventDefault();
     try {
       const mutationResponse = await login({
@@ -21,7 +21,7 @@ function Login(props) {
     }
   };
 
-  const handleChange = (event) => {
+  const newData = (event) => {
     const { name, value } = event.target;
     setFormState({
       ...formState,
@@ -31,28 +31,28 @@ function Login(props) {
 
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <Link to="/Signup">← Go to Signup</Link>
+      <Link to="/Signup">Signup</Link>
 
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
+      <h3>Login</h3>
+      <form onSubmit={formData}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor="email">Email:</label>
           <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            placeholder="youremail@test.com"
+            placeholder="enter your email"
             name="email"
             type="email"
             id="email"
-            onChange={handleChange}
+            onChange={newData}
           />
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            placeholder="******"
+            placeholder="enter password"
             name="password"
             type="password"
-            id="pwd"
-            onChange={handleChange}
+            id="password"
+            onChange={newData}
           />
         </div>
         {error ? (

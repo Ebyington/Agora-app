@@ -13,7 +13,7 @@ import Cart from './pages/Cart';
 import OrderComplete from './pages/OrderComplete';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
-import './index.css'
+import ProductPage from './pages/ProductPage';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,6 +50,7 @@ function App() {
               <Route path="/Cart" element={<Cart />} />
               <Route path="/OrderHistory" element={<OrderHistory />} />
               <Route path="/Products" element={<Products />} />
+              <Route path="/Products/:id" element={<ProductPage />} />
               <Route path="/success" element={<OrderComplete />} />
             </Routes>
           

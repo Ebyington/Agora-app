@@ -29,8 +29,8 @@ export const GET_USERS = gql`
 `;
 
 export const GET_PRODUCTS = gql`
-query getProducts($category: ID) {
-  products(category: $category) {
+query getProducts {
+  products {
     _id
     name
     category {
