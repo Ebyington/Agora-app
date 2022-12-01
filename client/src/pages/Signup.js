@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import '../styles/signup.css'
 
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: ''});
@@ -36,9 +37,13 @@ function Signup(props) {
         console.log(value);
     };
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div className="signup">
+            <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
             <Link className="flex-row space-between" to="/Login">Login</Link>
+            </button>
+            <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
             <Link className="flex-row space-between" to="/">Home</Link>
+            </button>
             <h2>BECOME A OMNV MEMBER</h2>
             <form onSubmit={formData}>
             <div className="flex-row space-between my-2">
