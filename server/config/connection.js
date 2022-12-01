@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/agora', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/omnvdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

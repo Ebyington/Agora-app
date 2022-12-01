@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_USERS } from '../utils/queries';
+import '../styles/history.css'
 
 function OrderHistory() {
   const { data } = useQuery(GET_USERS);
@@ -12,10 +13,9 @@ function OrderHistory() {
   }
 
   return (
-    <>
-      <div className="historyContainer">
-        {user ? (
-          <>
+    
+    <div>
+      <div className="historyContainer">{user ? (     
       <div>
         <h2>
           THANKS FOR PURCHASING THE BEST IN CLOTHING  {user.firstName} {user.lastName}
@@ -41,10 +41,11 @@ function OrderHistory() {
           </div>
             ))}
          </div>
-          </>
+    
         ) : null}
       </div>
-    </>
+      </div>
+      
   );
 }
 

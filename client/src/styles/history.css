@@ -1,0 +1,17 @@
+.historyContainer {
+    background-color: #D92938;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15%;
+  }
+  .cardTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    font-size: 1.5em;
+    background-color: #1C66A6;
+  }
+  
+  
