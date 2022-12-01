@@ -30,3 +30,19 @@
 .marginZero {
   margin: 0;
 }
+
+.centerCon {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.centerCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}

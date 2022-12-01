@@ -48,7 +48,7 @@ function Products() {
   }
 
   return (
-    <div>
+    <div className="centerCon">
       <h2 className='cardTitle'>Our Products:</h2>
           {state.products ? (
             <div className="reveal flex" >

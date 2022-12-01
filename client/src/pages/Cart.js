@@ -63,19 +63,17 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
+      <div className="centerCon">
+        <h1 className='cardTitle'>Shopping Cart is Empty</h1>
       </div>
     );
   }
 
   return (
-    <div className="cart">
+    <div className="centerCon">
       <h2 className='cardTitle'>Shopping Cart</h2>
       {state.cart.length ? (
-        <div>
+        <div className="centerCard">
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
