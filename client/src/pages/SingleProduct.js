@@ -66,7 +66,12 @@ function SinglePage() {
             src={`/assets/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+          <p>{currentProduct.reviews}</p>
+
+
+
         </div>
+
       ) : null}
       <CartItem />
     </>
