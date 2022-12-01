@@ -122,15 +122,6 @@ const resolvers = {
 
       return { token, user };
     }
-  //   addReview: async (parent, {reviewText, rating}, context) => {
-  //     if(context.review){
-  //       const review = new Product({ products })
-  //       await User.findByIdAndUpdate( context.user._id, {$push: {reviews: reviews}});
-  //       return review;
-  //     }
-  //   }
-  // }
-  
 }
 };
 module.exports = resolvers;
