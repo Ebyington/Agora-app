@@ -50,9 +50,8 @@ function Products() {
   return (
     <div>
       <h2>Our Products:</h2>
-     
           {state.products ? (
-            <div className="container reveal flex -mx-2 mb-8">
+            <div className="reveal flex" >
               {filterProducts().map((product) => (
                 <Item
                   key={product._id}

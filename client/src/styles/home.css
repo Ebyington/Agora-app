@@ -1,5 +1,8 @@
 html{
-    background-color: gray;
+    background-color: #DDD2CA;
+}
+header {
+    background-color: rgb(20, 20, 20)
 }
 * {
     margin: 0;
@@ -13,14 +16,14 @@ section{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: #DDD2CA;
+    color: #261D17;
     scroll-snap-align: start;
     flex-direction: column;
 }
 
 section img {
     padding: 10px;
-    border: 5px solid #DDD2CA;
+    border: 5px solid white;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +46,7 @@ section img {
 }
 
 .one{
-    background-color: #261D17;
+    background-color: #DDD2CA;
 }
 
 .two{
@@ -51,7 +54,7 @@ section img {
 }
 
 .three{
-    background-color: #261D17;
+    background-color: #DDD2CA;
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
@@ -73,3 +76,13 @@ section img {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+button {
+    background-color: #1C66A6;
+}
+button:hover {
+    background-color: #14558f;
+}
+li:hover{
+    background-color: #1C66A6;
+}

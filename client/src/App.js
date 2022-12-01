@@ -10,7 +10,7 @@ import Signup from './pages/Signup';
 import Products from './pages/Products';
 import OrderHistory from './pages/OrderHistory';
 import Cart from './pages/Cart';
-import Item from './pages/Item';
+import OrderComplete from './pages/OrderComplete';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import './index.css'
@@ -51,8 +51,8 @@ function App() {
               <Route path="/Cart" element={<Cart />} />
               <Route path="/OrderHistory" element={<OrderHistory />} />
               <Route path="/Products" element={<Products />} />
-              <Route path="/Item" element={<Item />} />
               <Route path="/Products/:id" element={<ProductPage />} />
+              <Route path="/success" element={<OrderComplete />} />
             </Routes>
           
           </Provider>
