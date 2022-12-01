@@ -39,7 +39,7 @@ function Item(item) {
       <div className="flex flex-wrap">
         <div className="my-1 bg-red-900 px-1 w-full lg:my-4 lg:px-4 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4">
           <article className="overflow-hidden ">
-            <Link to={`/products/${_id}`}>
+            <Link to={`/Products/${_id}`}>
               <img
                 alt={name}
                 className="box-content h-32 w-32 p-4 border-1"
