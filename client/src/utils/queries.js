@@ -38,6 +38,7 @@ query getProducts {
     description
     price
     image
+    reviews
   }
 }
 `;
@@ -46,20 +47,6 @@ export const GO_CHECKOUT = gql`
   query CHECKOUT($products: [ID]!) {
     checkout(products: $products) {
       session
-    }
-  }
-`;
-export const GET_ALL_PRODUCTS = gql`
-  {
-    products {
-      _id
-      name
-      description
-      price
-      quantity
-      category {
-        name
-      }
     }
   }
 `;
