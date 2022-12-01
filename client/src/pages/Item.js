@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
-import { idbPromise } from "../utils/helpers";
+import { fullPromise } from "../utils/helpers";
 
 function Item(item) {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function Item(item) {
         _id: _id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      idbPromise("cart", "put", {
+      fullPromise("cart", "put", {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
@@ -30,7 +30,7 @@ function Item(item) {
         type: ADD_TO_CART,
         product: { ...item, purchaseQuantity: 1 },
       });
-      idbPromise("cart", "put", { ...item, purchaseQuantity: 1 });
+      fullPromise("cart", "put", { ...item, purchaseQuantity: 1 });
     }
   };
 

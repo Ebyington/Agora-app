@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 
 import { ADD_HISTORY } from '../utils/mutations';
-import { idbPromise } from '../utils/helpers';
+import { fullPromise } from '../utils/helpers';
 
 function CompletedOrder() {
   const [addHistory] = useMutation(ADD_HISTORY);
 
   useEffect(() => {
     async function saveOrder() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await fullPromise('cart', 'get');
       const products = cart.map((item) => item._id);
 
       if (products.length) {
@@ -17,7 +17,7 @@ function CompletedOrder() {
         const productData = data.addHistory.products;
 
         productData.forEach((item) => {
-          idbPromise('cart', 'delete', item);
+          fullPromise('cart', 'delete', item);
         });
       }
 

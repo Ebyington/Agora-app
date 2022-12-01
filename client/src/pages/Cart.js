@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { GO_CHECKOUT } from '../utils/queries';
-import { idbPromise } from '../utils/helpers';
+import { fullPromise } from '../utils/helpers';
 import CartItem from '../components/CartItem';
 import Auth from '../utils/auth';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ const Cart = () => {
 
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await fullPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
