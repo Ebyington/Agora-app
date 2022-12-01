@@ -21,6 +21,7 @@ const typeDefs = gql`
       category: Category
       description: String
       price: Int    
+      reviews: String
     }
 
   type History {

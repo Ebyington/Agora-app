@@ -66,8 +66,15 @@ function SinglePage() {
               </p>
             </div>
           </div>
+
+          <div>
+          <p>{currentProduct.reviews}</p>
+          </div>
+          
         </div>
         
+        
+
       ) : null}
     </>
   );
