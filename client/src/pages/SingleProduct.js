@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_PRODUCTS } from '../utils/actions';
 import { GET_PRODUCTS } from '../utils/queries';
 import { fullPromise } from '../utils/helpers';
-import CartItem from '../components/CartItem';
 
 function SinglePage() {
   const dispatch = useDispatch();
@@ -16,7 +15,7 @@ function SinglePage() {
 
   const { loading, data } = useQuery(GET_PRODUCTS);
 
-  const { products, cart } = state;
+  const { products } = state;
 
   useEffect(() => {
     if (products.length) {
@@ -47,31 +46,34 @@ function SinglePage() {
   return (
     
     <>
-      {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/Products">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+      {currentProduct ? (
+        <div className='singleBig'>
+          <div className="singleContainer">
+            <div className='topRight'>
+              <Link to="/Products">← Back to Products</Link>
+            </div>
+            <div>
+              <img src={`/assets/${currentProduct.image}`} alt={currentProduct.name} width="400px" height="550px"/>
+            </div>
             
-          </p>
+            <div>
+              <h2>{currentProduct.name}</h2>
+              <p>{currentProduct.description}</p>
+              <p>
+                <strong>Price:</strong>${currentProduct.price}{' '}
+              </p>
+            </div>
+          </div>
 
-          <img
-            src={`/assets/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          <div className='reviews'>
           <p>{currentProduct.reviews}</p>
-
-
+          </div>
 
         </div>
+        
+        
 
       ) : null}
-      <CartItem />
     </>
   );
 }
