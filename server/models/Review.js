@@ -8,13 +8,13 @@ const productReview = new Schema({
         required: true,
     },
     rating: {
-        type: Int,
+        type: Number,
         required: true,
         min: 1,
         max: 5
     }
 });
 
-const Review = mongoose.model('Product', productReview);
+const Review = mongoose.model('Review', productReview);
 
 module.exports = Review;
