@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import '../styles/login.css'
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -21,7 +22,9 @@ function Login(props) {
     }
   };
 
+
   const newData = (event) => {
+
     const { name, value } = event.target;
     setFormState({
       ...formState,
@@ -30,6 +33,7 @@ function Login(props) {
   };
 
   return (
+
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <Link to="/Signup">Signup</Link>
 
@@ -43,6 +47,7 @@ function Login(props) {
             type="email"
             id="email"
             onChange={newData}
+
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -53,11 +58,12 @@ function Login(props) {
             type="password"
             id="password"
             onChange={newData}
+
           />
         </div>
         {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect.</p>
+            <p className="error-text">Email and/or password not found.</p>
           </div>
         ) : null}
         <div className="flex-row flex-end">

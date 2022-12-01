@@ -1,16 +1,12 @@
-
-#login {
-	width: 280px;
+.login {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#login form span {
-	background-color: #363b41;
-	border-radius: 3px 0px 0px 3px;
-	color: #606468;
-	display: block;
-	float: left;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	width: 50px;
-}
+/* .goToSignup {
+
+} */
