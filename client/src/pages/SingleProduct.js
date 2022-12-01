@@ -67,10 +67,10 @@ function SinglePage() {
             </div>
           </div>
 
-          <div>
+          <div className='reviews'>
           <p>{currentProduct.reviews}</p>
           </div>
-          
+
         </div>
         
         
