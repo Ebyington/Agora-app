@@ -38,6 +38,7 @@ query getProducts {
     description
     price
     image
+    reviews
   }
 }
 `;
