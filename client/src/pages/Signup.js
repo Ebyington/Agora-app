@@ -37,15 +37,10 @@ function Signup(props) {
         console.log(value);
     };
     return (
+        <>
         <div className="signup">
-            <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
-            <Link className="flex-row space-between" to="/Login">Login</Link>
-            </button>
-            <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
-            <Link className="flex-row space-between" to="/">Home</Link>
-            </button>
-            <h2>BECOME A OMNV MEMBER</h2>
             <form onSubmit={formData}>
+            <h2>BECOME A OMNV MEMBER</h2>
             <div className="flex-row space-between my-2">
                     <label htmlFor="username">Username:</label>
                     <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -102,6 +97,7 @@ function Signup(props) {
                 </div>
             </form>
         </div>
+        </>
     );
 }
 
