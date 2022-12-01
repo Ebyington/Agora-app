@@ -35,9 +35,9 @@ function Item(item) {
   };
 
   return (
-    <div className="container my-12 mx-auto px-4 md:px-12">
+    <div className="container my-12 mx-auto md:px-12">
       <div className="flex flex-wrap">
-        <div className="my-1 bg-red-900 px-1 w-full lg:my-4 lg:px-4 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4">
+        <div className="my-1 bg-red-900 px-1 w-full lg:my-4 lg:px-4 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4" id="productCard">
           <article className="overflow-hidden ">
             <Link to={`/products/${_id}`}>
               <img
@@ -54,7 +54,7 @@ function Item(item) {
               <span>${price}</span>
             </div>
             <button
-              className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full"
+              className="text-white font-bold py-2 px-4 rounded-full"
               onClick={addToCart}
             >
               Add to cart
