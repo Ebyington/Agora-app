@@ -49,7 +49,7 @@ function Products() {
 
   return (
     <div>
-      <h2>Our Products:</h2>
+      <h2 className='cardTitle'>Our Products:</h2>
           {state.products ? (
             <div className="reveal flex" >
               {filterProducts().map((product) => (
