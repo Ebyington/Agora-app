@@ -12,11 +12,6 @@ const productReview = new Schema({
         required: true,
         min: 1,
         max: 5
-    },
-    product: {
-        type: Schema.Types.ObjectId,
-        ref: 'Product',
-        required: true
     }
 });
 
