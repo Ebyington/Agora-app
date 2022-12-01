@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { UPDATE_PRODUCTS } from "../utils/actions";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../utils/queries";
-import { idbPromise } from "../utils/helpers";
+import { fullPromise } from "../utils/helpers";
 import '../styles/product.css';
 
 function Products() {
@@ -25,10 +25,10 @@ function Products() {
         products: data.products,
       });
       data.products.forEach((product) => {
-        idbPromise("products", "put", product);
+        fullPromise("products", "put", product);
       });
     } else if (!loading) {
-      idbPromise("products", "get").then((products) => {
+      fullPromise("products", "get").then((products) => {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: products,

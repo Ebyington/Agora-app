@@ -6,8 +6,6 @@ import {
     ADD_MULTIPLE_TO_CART,
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY,
-    CLEAR_CART,
-    TOGGLE_CART
   } from "./actions";
 
   const Start = {
@@ -60,19 +58,6 @@ import {
           ...state,
           cartOpen: newState.length > 0,
           cart: newState,
-        };
-  
-      case CLEAR_CART:
-        return {
-          ...state,
-          cartOpen: false,
-          cart: [],
-        };
-  
-      case TOGGLE_CART:
-        return {
-          ...state,
-          cartOpen: !state.cartOpen,
         };
   
       case UPDATE_CATEGORIES:

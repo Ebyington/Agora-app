@@ -9,7 +9,7 @@ function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
-  const handleFormSubmit = async (event) => {
+  const formData = async (event) => {
     event.preventDefault();
     try {
       const mutationResponse = await login({
@@ -22,7 +22,9 @@ function Login(props) {
     }
   };
 
-  const handleStateChange = (event) => {
+
+  const newData = (event) => {
+
     const { name, value } = event.target;
     setFormState({
       ...formState,
@@ -31,31 +33,32 @@ function Login(props) {
   };
 
   return (
-    <div className="login">
-      <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
-      <Link to="/Signup">← Go to Signup</Link>
-      </button>
-      <h2>Login</h2>
-      
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2 align-content:center justify-content:center">
-          <label htmlFor="email">Email address:</label>
+
+    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <Link to="/Signup">Signup</Link>
+
+      <h3>Login</h3>
+      <form onSubmit={formData}>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="email">Email:</label>
           <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            placeholder="youremail@test.com"
+            placeholder="enter your email"
             name="email"
             type="email"
             id="email"
-            onChange={handleStateChange}
+            onChange={newData}
+
           />
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            placeholder="******"
+            placeholder="enter password"
             name="password"
             type="password"
-            id="pwd"
-            onChange={handleStateChange}
+            id="password"
+            onChange={newData}
+
           />
         </div>
         {error ? (

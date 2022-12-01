@@ -6,7 +6,7 @@ import {
   UPDATE_PRODUCTS,
 } from '../utils/actions';
 import { GET_PRODUCTS } from '../utils/queries';
-import { idbPromise } from '../utils/helpers';
+import { fullPromise } from '../utils/helpers';
 import CartItem from '../components/CartItem';
 
 function ProductPage() {
@@ -31,11 +31,11 @@ function ProductPage() {
       });
 
       data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+        fullPromise('products', 'put', product);
       });
     }
     else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      fullPromise('products', 'get').then((indexedProducts) => {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: indexedProducts,
@@ -44,35 +44,7 @@ function ProductPage() {
     }
   }, [products, data, loading, dispatch, id]);
 
-  // const addToCart = () => {
-  //   const itemInCart = cart.find((cartItem) => cartItem._id === id);
-  //   if (itemInCart) {
-  //     dispatch({
-  //       type: UPDATE_CART_QUANTITY,
-  //       _id: id,
-  //       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-  //     });
-  //     idbPromise('cart', 'put', {
-  //       ...itemInCart,
-  //       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-  //     });
-  //   } else {
-  //     dispatch({
-  //       type: ADD_TO_CART,
-  //       product: { ...currentProduct, purchaseQuantity: 1 },
-  //     });
-  //     idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
-  //   }
-  // };
 
-  // const removeFromCart = () => {
-  //   dispatch({
-  //     type: REMOVE_FROM_CART,
-  //     _id: currentProduct._id,
-  //   });
-
-  //   idbPromise('cart', 'delete', { ...currentProduct });
-  // };
 
   return (
     

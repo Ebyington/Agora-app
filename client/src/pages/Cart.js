@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { GO_CHECKOUT } from '../utils/queries';
-import { idbPromise } from '../utils/helpers';
+import { fullPromise } from '../utils/helpers';
 import CartItem from '../components/CartItem';
 import Auth from '../utils/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
-// import './style.css';
+import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
 
 const stripePromise = loadStripe('pk_test_51M9HYMKvhJVBquanDqSOtkEIJPPBswKxoRWtjEz55zI2CbMbIewgZyZvP6mYOptbKMp5DFMOZHx9wVZeES4gDYvv005nMgscAk');
 
@@ -26,7 +25,7 @@ const Cart = () => {
 
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await fullPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
@@ -34,10 +33,6 @@ const Cart = () => {
       getCart();
     }
   }, [state.cart.length, dispatch]);
-
-  function toggleCart() {
-    dispatch({ type: TOGGLE_CART });
-  }
 
   function calculateTotal() {
     let sum = 0;
@@ -89,7 +84,9 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          You have not placed anything in your cart yet. Please buy our merch!
+
+          Cart is Empty!
+
         </h3>
       )}
     </div>
