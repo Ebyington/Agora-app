@@ -43,7 +43,6 @@ export const ADD_HISTORY = gql`
         name
         description
         price
-        stock
         category {
           name
         }
@@ -51,3 +50,12 @@ export const ADD_HISTORY = gql`
     }
   }
 `;
+
+// export const ADD_REVIEW= gql`
+//   mutation addReview($reviewText: String!, $rating: Int!){
+//     addReview(reviewText: $reviewText, rating: Int!){
+//       review{
+//         _id
+//       }
+//     }
+//   }`

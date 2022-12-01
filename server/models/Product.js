@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// need to update with image
-
 const productSchema = new Schema({
     name: {
         type: String,
@@ -20,11 +18,6 @@ const productSchema = new Schema({
     description: {
         type: String,
     }, 
-    stock: {
-        type: Number,
-        min: 0,
-        default: 0
-    },
     category: {
         type: Schema.Types.ObjectId,
         ref: 'Category',

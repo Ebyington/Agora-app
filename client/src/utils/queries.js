@@ -18,8 +18,7 @@ export const GET_USERS = gql`
               name
             }
             description
-            price
-            stock
+            price        
             image
           }
           purchaseDate
@@ -38,7 +37,6 @@ query getProducts {
     }
     description
     price
-    stock
     image
   }
 }

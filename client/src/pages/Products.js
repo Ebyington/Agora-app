@@ -60,7 +60,6 @@ function Products() {
                   image={product.image}
                   description={product.description}
                   price={product.price}
-                  stock={product.stock}
                 />
               ))}
             </div>
