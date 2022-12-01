@@ -13,34 +13,34 @@ function OrderHistory() {
 
   return (
     <>
-      <div className="container my-1">
-        <Link to="/Products">← Back to Products</Link>
-
+      <div className="historyContainer">
         {user ? (
           <>
-            <h2>
-              Order History for {user.firstName} {user.lastName}
-            </h2>
-            {user.histories.map((item) => (
-              <div key={item._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
-                </h3>
-                <div className="flex-row">
-                  {item.products.map(({ _id, image, name, price }, index) => (
-                    <div key={index} className="card px-1 py-1">
-                      <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/assets/${image}`} />
-                        <p>{name}</p>
-                      </Link>
-                      <div>
-                        <span>${price}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      <div>
+        <h2>
+          THANKS FOR PURCHASING THE BEST IN CLOTHING  {user.firstName} {user.lastName}
+        </h2>
+          {user.histories.map((item) => (
+          <div key={item._id} className="my-2">
+          <h3>
+            {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
+          </h3>
+          <div className="flex-row">
+            {item.products.map(({ _id, image, name, price }, index) => (
+          <div key={index} className="card">
+            <Link to={`/products/${_id}`}>
+            <img alt={name} src={`/assets/${image}`} />
+              <p>{name}</p>
+            </Link>
+           <div>
+              <span>${price}</span>
+            </div>
+          </div>
+              ))}
+          </div>
+          </div>
             ))}
+         </div>
           </>
         ) : null}
       </div>
