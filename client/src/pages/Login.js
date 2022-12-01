@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import '../styles/login.css'
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -21,7 +22,7 @@ function Login(props) {
     }
   };
 
-  const handleChange = (event) => {
+  const handleStateChange = (event) => {
     const { name, value } = event.target;
     setFormState({
       ...formState,
@@ -30,19 +31,21 @@ function Login(props) {
   };
 
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="login">
+      <button className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
       <Link to="/Signup">← Go to Signup</Link>
-
+      </button>
       <h2>Login</h2>
+      
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+        <div className="flex-row space-between my-2 align-content:center justify-content:center">
           <label htmlFor="email">Email address:</label>
           <input className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             placeholder="youremail@test.com"
             name="email"
             type="email"
             id="email"
-            onChange={handleChange}
+            onChange={handleStateChange}
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -52,12 +55,12 @@ function Login(props) {
             name="password"
             type="password"
             id="pwd"
-            onChange={handleChange}
+            onChange={handleStateChange}
           />
         </div>
         {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect.</p>
+            <p className="error-text">Email and/or password not found.</p>
           </div>
         ) : null}
         <div className="flex-row flex-end">
