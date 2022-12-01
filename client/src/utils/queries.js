@@ -49,20 +49,6 @@ export const GO_CHECKOUT = gql`
     }
   }
 `;
-export const GET_ALL_PRODUCTS = gql`
-  {
-    products {
-      _id
-      name
-      description
-      price
-      quantity
-      category {
-        name
-      }
-    }
-  }
-`;
 
 export const GET_CATEGORIES = gql`
   {

@@ -9,7 +9,7 @@ import { GET_PRODUCTS } from '../utils/queries';
 import { fullPromise } from '../utils/helpers';
 import CartItem from '../components/CartItem';
 
-function ProductPage() {
+function SinglePage() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { id } = useParams();
@@ -73,4 +73,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default SinglePage;
