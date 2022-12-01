@@ -5,3 +5,44 @@
 #productCard {
   background-color: #D92938;
 }
+
+#itemCard {
+  background-color: #D92938;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  font-size: 1.5em;
+}
+
+.marginZero {
+  margin: 0;
+}
+
+.centerCon {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.centerCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}

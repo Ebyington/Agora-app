@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pluralize } from "../utils/helpers";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
@@ -9,7 +8,7 @@ function Item(item) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  const { image, name, _id, price, quantity } = item;
+  const { image, name, _id, price } = item;
 
   const { cart } = state;
 
@@ -39,7 +38,7 @@ function Item(item) {
       <div className="flex flex-wrap">
         <div className="my-1 bg-red-900 px-1 w-full lg:my-4 lg:px-4 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4" id="productCard">
           <article className="overflow-hidden ">
-            <Link to={`/products/${_id}`}>
+            <Link to={`/Products/${_id}`}>
               <img
                 alt={name}
                 className="box-content h-32 w-32 p-4 border-1"
@@ -48,9 +47,6 @@ function Item(item) {
               <p className=" no-underline hover:underline text-grey-darker text-lg">{name}</p>
             </Link>
             <div>
-              <div>
-                {quantity} {pluralize("item", quantity)} in stock
-              </div>
               <span>${price}</span>
             </div>
             <button
