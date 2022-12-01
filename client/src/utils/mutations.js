@@ -33,3 +33,21 @@ export const LOGIN = gql`
         }
       }
 `;
+
+export const ADD_HISTORY = gql`
+  mutation addHistory($products: [ID]!) {
+    addHistory(products: $products) {
+      purchaseDate
+      products {
+        _id
+        name
+        description
+        price
+        stock
+        category {
+          name
+        }
+      }
+    }
+  }
+`;
