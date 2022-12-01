@@ -88,16 +88,13 @@ const Cart = () => {
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <span>(Please login to checkout.)</span>
             )}
           </div>
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
+          You have not placed anything in your cart yet. Please buy our merch!
         </h3>
       )}
     </div>
