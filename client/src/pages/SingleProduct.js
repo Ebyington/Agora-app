@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
-import { UPDATE_PRODUCTS } from '../utils/actions';
+import { UPDATE_PRODUCTS, ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
 import { GET_PRODUCTS } from '../utils/queries';
+// import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { fullPromise } from '../utils/helpers';
 
 function SinglePage() {
@@ -15,7 +16,7 @@ function SinglePage() {
 
   const { loading, data } = useQuery(GET_PRODUCTS);
 
-  const { products } = state;
+  const { products, cart } = state;
 
   const [review, setReview] = useState("");
   const [reviews, setReviews] = useState([]);
@@ -51,7 +52,26 @@ function SinglePage() {
     }
   }, [products, data, loading, dispatch, id]);
 
-
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+      fullPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...currentProduct, purchaseQuantity: 1 },
+      });
+      fullPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+    }
+  };
 
   return (
     
@@ -72,7 +92,19 @@ function SinglePage() {
               <p>
                 <strong>Price:</strong>${currentProduct.price}{' '}
               </p>
+              <button
+              className="text-white font-bold py-2 px-4 rounded-full"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button>
             </div>
+            {/* <button
+              className="text-white font-bold py-2 px-4 rounded-full"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button> */}
           </div>
 
        

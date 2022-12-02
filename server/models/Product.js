@@ -26,9 +26,9 @@ const productSchema = new Schema({
         ref: 'Category',
         required: true
     },
-    // reviews: [
-    //     Review.schema
-    // ]
+    reviews: {
+        type: String,
+    }
 
 });
 
