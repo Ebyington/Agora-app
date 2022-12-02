@@ -36,7 +36,7 @@ const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="container my-12 mx-auto md:px-12 marginZero">
+    <div className="container my-12 mx-auto md:px-12 ">
       <div className="flex flex-wrap">
         <div className="my-1 bg-red-900 px-1 w-full lg:my-4 lg:px-4 rounded-lg shadow-lg justify-between leading-tight p-2 md:p-4" id="itemCard">
           <img
@@ -45,22 +45,20 @@ const CartItem = ({ item }) => {
             alt=""
           />
           <div>
-            <div>{item.name}, ${item.price}</div>
+            <div className=" py-2 px-4"> {item.name} ${item.price}</div>
             <div>
-              <span>Qty:</span>
+              <span>Qty: </span>
               <input
                 type="number"
                 placeholder="1"
                 value={item.purchaseQuantity}
                 onChange={onChange}
               />
-              <span
-                role="img"
-                aria-label="trash"
+              <button className="rounded p-3 m-3 "
                 onClick={() => removeFromCart(item)}
               >
                 Remove
-              </span>
+              </button>
             </div>
           </div>
         </div>

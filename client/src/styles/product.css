@@ -33,6 +33,7 @@
   align-items: stretch;
   flex-direction: column;
   height: 100vh;
+  margin-top: auto;
 }
 
 .centerCon {

@@ -50,7 +50,7 @@ function Item(item) {
               <span>${price}</span>
             </div>
             <button
-              className="text-white font-bold py-2 px-4 rounded-full"
+              className=" py-2 px-4 rounded"
               onClick={addToCart}
             >
               Add to cart
