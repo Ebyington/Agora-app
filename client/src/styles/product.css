@@ -31,8 +31,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
   height: 70vh;
   justify-content: center;
+
 }
 
 .centerCard {

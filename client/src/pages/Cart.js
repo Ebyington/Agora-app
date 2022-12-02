@@ -7,6 +7,7 @@ import CartItem from '../components/CartItem';
 import Auth from '../utils/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
+import '../styles/home.css';
 
 const stripePromise = loadStripe('pk_test_51M9HYMKvhJVBquanDqSOtkEIJPPBswKxoRWtjEz55zI2CbMbIewgZyZvP6mYOptbKMp5DFMOZHx9wVZeES4gDYvv005nMgscAk');
 
@@ -65,7 +66,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="centerCon">
+    <div className="centerCon mt-10 ">
       <h2 className='cardTitle'>Shopping Cart</h2>
       {state.cart.length ? (
         <div className="centerCard">
@@ -76,7 +77,7 @@ const Cart = () => {
           <div className="cardTitle">
             <strong>Total: ${calculateTotal()}</strong>
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button className="rounded p-3 m-3 " onClick={submitCheckout}>Checkout</button>
             ) : (
               <span>(Please login to checkout.)</span>
             )}
