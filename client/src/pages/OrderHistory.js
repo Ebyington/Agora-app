@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_USERS } from '../utils/queries';
+import '../styles/history.css'
 
 function OrderHistory() {
   const { data } = useQuery(GET_USERS);
@@ -9,42 +10,51 @@ function OrderHistory() {
 
   if (data) {
     user = data.user;
+    console.log(user);
   }
 
   return (
-    <>
-      <div className="historyContainer">
-        {user ? (
-          <>
+    
+    
+      <div className="historyContainer">{user ? (     
       <div>
-        <h2>
-          THANKS FOR PURCHASING THE BEST IN CLOTHING  {user.firstName} {user.lastName}
-        </h2>
+        
+      <div className='historyCard'>
+        
           {user.histories.map((item) => (
-          <div key={item._id} className="my-2">
-          <h3>
-            {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
-          </h3>
-          <div className="flex-row">
+            <div key={item._id} className="itemBox">
+         
+          <div>
+         <h2 className='historyTitle'>
+          THANKS FOR PURCHASING THE BEST IN CLOTHING {user.fName} {user.lName}
+          
+          {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
+          </h2>
+        
+          </div>
+          <div className="flex-row productInfo">
+          
+
             {item.products.map(({ _id, image, name, price }, index) => (
-          <div key={index} className="card">
+
+          <div key={index} className="card1">
             <Link to={`/products/${_id}`}>
-            <img alt={name} src={`/assets/${image}`} />
-              <p>{name}</p>
+            <img className='productImg' alt={name} src={`/assets/${image}`} />
+              <p className='name1'>{name}</p>
             </Link>
            <div>
-              <span>${price}</span>
+              <span className='price1'>${price}</span>
             </div>
           </div>
               ))}
           </div>
+
           </div>
             ))}
+            </div>
          </div>
-          </>
         ) : null}
-      </div>
-    </>
+      </div>     
   );
 }
 

@@ -39,9 +39,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <header className='NavBar'>
+         
             <Navbar />
-            </header>
+            
             <Provider store={store}>
             <Routes>
               <Route path="/" element={<Home />} />
