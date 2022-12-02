@@ -29,7 +29,11 @@ function CompletedOrder() {
   return (
     <div>
 
-        <h1>Oof...you bought it...Thanks!</h1>
+        <h1 className='cardTitle'>
+          
+          Oof...you bought it...Thanks!
+          
+        </h1>
    
     </div>
   );
