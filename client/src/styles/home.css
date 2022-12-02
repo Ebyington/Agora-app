@@ -1,7 +1,7 @@
 html{
     background-color: #DDD2CA;
 }
-header {
+.navbarCon {
     background-color: rgba(20, 20, 20, 0);
     position: absolute;
     z-index: 2;
