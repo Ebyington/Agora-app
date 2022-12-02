@@ -24,7 +24,7 @@ const productSchema = new Schema({
         required: true
     },
     reviews: {
-        type: String
+        type: String,
     }
 
 });
