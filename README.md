@@ -18,6 +18,8 @@ a full stack online store to showcase our featured brand, OMNV! Our innovative p
 
 This app is fully deployed through heroku
 
+https://omnv-shop.herokuapp.com/
+
 ## Usage
 
 Create a profile through our signup tab, then browse our products and follow instructions to checkout!
