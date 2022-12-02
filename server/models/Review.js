@@ -1,20 +1,20 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const { Schema } = mongoose;
+const { Schema } = mongoose;
 
-// const productReview = new Schema({
-//     message: {
-//         type: String,
-//         required: true,
-//     },
-//     rating: {
-//         type: Int,
-//         required: true,
-//         min: 1,
-//         max: 5
-//     }
-// });
+const productReview = new Schema({
+    message: {
+        type: String,
+        required: true,
+    },
+    rating: {
+        type: Int,
+        required: true,
+        min: 1,
+        max: 5
+    }
+});
 
-// const Review = mongoose.model('Product', productReview);
+const Review = mongoose.model('Product', productReview);
 
-// module.exports = Review;
+module.exports = Review;
