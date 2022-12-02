@@ -17,19 +17,15 @@ function OrderHistory() {
     
     
       <div className="historyContainer">{user ? (     
-      <div>
-        
       <div className='historyCard'>
+        
+      <div>
         
           {user.histories.map((item) => (
             <div key={item._id} className="itemBox">
          
           <div>
-         <h2 className='historyTitle'>
-          THANKS FOR PURCHASING THE BEST IN CLOTHING {user.fName} {user.lName}
           
-          {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
-          </h2>
         
           </div>
           <div className="flex-row productInfo">
@@ -48,7 +44,11 @@ function OrderHistory() {
           </div>
               ))}
           </div>
-
+          <h2 className='historyTitle'>
+          THANKS FOR PURCHASING THE BEST IN CLOTHING {user.fName} {user.lName}
+          
+          {new Date(parseInt(item.purchaseDate)).toLocaleDateString()}
+          </h2>
           </div>
             ))}
             </div>

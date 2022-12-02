@@ -28,13 +28,15 @@ function CompletedOrder() {
 
   return (
     <div>
+      <div className='successCon'>
 
-        <h1 className='cardTitle'>
-          
-          Oof...you bought it...Thanks!
-          
-        </h1>
-   
+          <h1 className='cardTitle'>
+            
+            Oof...you bought it...Thanks!
+            
+          </h1>
+    
+      </div>
     </div>
   );
 }

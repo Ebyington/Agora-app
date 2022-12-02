@@ -7,7 +7,6 @@
     border-left: 4px solid;
     border-right:4px solid; 
     border-top: 4px solid;
-
  }
  .historyTitle{
     display: flex;
@@ -25,8 +24,8 @@
 
  }
  .productImg{
-    width: 300px;
-    height: 325px;
+    width: 200px;
+    height: 225px;
  }
  .name1{
     background-color: #1C66A6;
@@ -44,9 +43,15 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 200px;
-  
+    height: 50vh;
 }
 .historyCard{
     height: 50%;
+}
+
+.successCon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
 }
