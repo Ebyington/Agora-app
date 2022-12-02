@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_PRODUCTS } from '../utils/actions';
 import { GET_PRODUCTS } from '../utils/queries';
+// import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { fullPromise } from '../utils/helpers';
 
 function SinglePage() {
@@ -41,6 +42,8 @@ function SinglePage() {
     }
   }, [products, data, loading, dispatch, id]);
 
+  
+
 
 
   return (
@@ -63,6 +66,12 @@ function SinglePage() {
                 <strong>Price:</strong>${currentProduct.price}{' '}
               </p>
             </div>
+            {/* <button
+              className="text-white font-bold py-2 px-4 rounded-full"
+              onClick={addToCart}
+            >
+              Add to cart
+            </button> */}
           </div>
 
           <div className='reviews'>
