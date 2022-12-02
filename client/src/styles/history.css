@@ -1,17 +1,52 @@
-.historyContainer {
+ .productInfo{
     background-color: #D92938;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 15%;
-  }
-  .cardTitle {
+    margin-top: 7%;
+    border-left: 4px solid;
+    border-right:4px solid; 
+    border-top: 4px solid;
+
+ }
+ .historyTitle{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 25px;
-    font-size: 1.5em;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    width: 800px;
+ }
+ .card1{
+    
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2% #DDD2CA;
+
+ }
+ .productImg{
+    width: 300px;
+    height: 325px;
+ }
+ .name1{
     background-color: #1C66A6;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .price1{
+    background-color: #1C66A6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.historyContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 200px;
   
-  
+}
+.historyCard{
+    height: 50%;
+}
