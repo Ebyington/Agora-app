@@ -121,7 +121,25 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
+
+    // addReview: async (parent, { thoughtId, reviewText }, context) => {
+    //   if (context.user) {
+    //     return Review.findOneAndUpdate(
+    //       { _id: reviewId },
+    //       {
+    //         $addToSet: {
+    //           reviews: { reviewText, reviewAuthor: context.user.username },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
 }
 };
 module.exports = resolvers;

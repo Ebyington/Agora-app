@@ -14,6 +14,15 @@ const typeDefs = gql`
       histories: [History]
   }
 
+  type Review {
+    _id: ID
+    ReviewText: String
+    ReviewAuthor: String
+    createdAt: String
+  }
+
+
+
   type Product {
       _id: ID
       name: String
@@ -21,7 +30,7 @@ const typeDefs = gql`
       category: Category
       description: String
       price: Int    
-      reviews: String
+      
     }
 
   type History {
@@ -54,7 +63,7 @@ const typeDefs = gql`
     updateUser(fName: String, lName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-
+    addReview(reviewText: String!): Review
   }
 `;
 

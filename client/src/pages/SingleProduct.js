@@ -17,6 +17,16 @@ function SinglePage() {
 
   const { products } = state;
 
+  const [review, setReview] = useState("");
+  const [reviews, setReviews] = useState([]);
+  
+  const onClickHandler = () => {
+    setReviews((reviews) => [...reviews, review]);
+  };
+  const onChangeHandler = (e) => {
+    setReview(e.target.value);
+  };
+
   useEffect(() => {
     if (products.length) {
       setCurrentProduct(products.find((product) => product._id === id));
@@ -65,9 +75,23 @@ function SinglePage() {
             </div>
           </div>
 
-          <div className='reviews'>
-          <p>{currentProduct.reviews}</p>
+       
+
+          <div className="review-container-first">
+            {reviews.map((text) => (
+              <div className="review-container-second">{review}</div>
+            ))}
+          <div className="comment-flexbox">
+            <h3>Review</h3>
+              <textarea
+              value={review} 
+              onChange={onChangeHandler}
+              className="input-box"
+              />
+              <button onClick={onClickHandler} className="review-button">Submit</button>
+            
           </div>
+        </div>
 
         </div>
         

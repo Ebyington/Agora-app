@@ -50,3 +50,14 @@ export const ADD_HISTORY = gql`
     }
   }
 `;
+
+export const ADD_REVIEW = gql`
+  mutation addReview($reviewId: ID!, $reviewText: String!) {
+    addReview(reviewId: $reviewId, reviewText: $reviewText) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
+  }
+`;

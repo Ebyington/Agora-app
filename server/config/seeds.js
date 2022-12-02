@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Review } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -22,7 +22,7 @@ db.once('open', async () => {
         '100% Cotton. Imported. Pull On closure. Machine Wash. Unisex streetwear design for men, women, boys, girls, dark style graphic tshirt.Oversized fit, drop-shoulder. Retro Washed effect Fabric.',
       category: categories[0]._id,
       price: 125,
-      reviews: 'This article of clothing is rad and hip.'
+      reviews: [Review._id]
     },
     {
       name: '{ Hat }',
@@ -31,7 +31,7 @@ db.once('open', async () => {
         '100% Cotton. Embroidered Dad Cap',
       category: categories[1]._id,
       price: 50,
-      reviews: 'This article of clothing is rad and hip.'
+      reviews: [Review._id]
     },
     {
       name: '{ Pants }',
@@ -39,7 +39,11 @@ db.once('open', async () => {
       description: '100% Polyester. Lightweight water-resistant fabric. Fully lined mesh lining. Relaxed fit. Elastic waistband and ankle cuffs. Zip pockets. Sits at hip. Tear-away care label Blank product sourced from China.',
       category: categories[1]._id,
       price: 50,
-      reviews: 'This article of clothing is rad and hip.'
+      reviews: [
+        {
+          reviews: [products[0]._id]
+        }
+      ]
     },
   ]);
 
@@ -64,3 +68,13 @@ db.once('open', async () => {
 
   process.exit();
 });
+
+await Review.deleteMany();
+
+const reviews = await Review.insertMany([
+
+{
+  message: 'This one is a sick fit, dog.',
+  rating: 5
+}
+]);

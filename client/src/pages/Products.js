@@ -47,6 +47,8 @@ function Products() {
     );
   }
 
+  
+
   return (
     <div className="centerCon">
       <h2 className='cardTitle'>Our Products:</h2>
@@ -66,8 +68,8 @@ function Products() {
           ) : (
             <h3>You haven't added any products yet!</h3>
           )}
-        </div>
-    
+          
+      </div>
   );
 }
 
