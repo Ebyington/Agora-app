@@ -23,10 +23,8 @@ const productSchema = new Schema({
         ref: 'Category',
         required: true
     },
-    review: {
-        type: Schema.Types.ObjectId,
-        ref:'Review',
-        required:false
+    reviews: {
+        type: String
     }
 
 });
