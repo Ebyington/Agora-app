@@ -39,7 +39,7 @@ db.once('open', async () => {
       description: '100% Polyester. Lightweight water-resistant fabric. Fully lined mesh lining. Relaxed fit. Elastic waistband and ankle cuffs. Zip pockets. Sits at hip. Tear-away care label Blank product sourced from China.',
       category: categories[1]._id,
       price: 50,
-      reviews: 'This article of clothing is rad and hip.'
+      reviews: 'This article of clothing is not hip.'
     },
   ]);
 
